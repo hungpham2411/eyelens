@@ -35,6 +35,18 @@ function addEventListeners() {
             console.log(e);
         }
 
+        try {
+            $("#accessories-owlslider").owlCarousel({
+                items: 6,
+                navigation: true,
+                navigationText: ["<img src='images/slider/arrow-left.png'>", "<img src='images/slider/arrow-right.png'>"],
+                pagination: false
+            });
+            CloudZoom.quickStart();
+        } catch (e) {
+            console.log(e);
+        }
+
         //Initialize popover
         $("[data-toggle=popover]").popover();
 
