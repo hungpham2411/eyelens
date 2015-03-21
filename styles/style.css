@@ -188,6 +188,10 @@
     padding: 10px;
 }
 
+.pda2 {
+    padding: 20px;
+}
+
 .product-attachment .heading img {
     width: 48px;
     height: 48px;
@@ -320,9 +324,42 @@
     text-decoration: none;
 }
 
+/*polariods gallery*/
+.polaroids .img-cover {
+    height: 100vw;
+}
+
+.polaroids li {
+    transform: rotate(-1deg);
+    transition: transform .15s linear;
+}
+
+.polaroids li:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.polaroids li:nth-child(3n) {
+    transform: rotate(-1.5deg);
+}
+
+.polaroids li:nth-child(5n) {
+    transform: rotate(2.5deg);
+}
+
+/* Scale the images on hover, add transitions for smoothing things out, and ensure the hover appears on top */
+.polaroids li:hover {
+    transform: scale(1.25);
+    position: relative;
+    z-index: 1;
+}
+
 @media screen and (min-width: 992px) and (max-width: 1200px) {
     .nav-tools {
         width: 300px;
+    }
+
+    .polaroids .img-cover {
+        height: 16vw;
     }
 
     .thumb-1 {
@@ -333,6 +370,10 @@
 @media screen and (min-width: 1200px) {
     .nav-tools {
         width: 300px;
+    }
+
+    .polaroids .img-cover {
+        height: 16vw;
     }
 
     .thumb-1 {

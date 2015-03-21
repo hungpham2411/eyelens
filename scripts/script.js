@@ -25,10 +25,10 @@ function addEventListeners() {
 
         try {
             $("#model-owlslider").owlCarousel({
-                items: 1,
                 navigation: true,
                 navigationText: ["<img src='images/slider/arrow-left.png'>", "<img src='images/slider/arrow-right.png'>"],
-                pagination: false
+                pagination: false,
+                singleItem: true
             });
             CloudZoom.quickStart();
         } catch (e) {
