@@ -141,6 +141,33 @@
     height: 128px;
 }
 
+.miss-photo-preview {
+    height: 100vw;
+
+    position: relative;
+}
+
+.miss-photo-preview-lens {
+    width: 100%;
+    height: 15%;
+
+    background-color: white;
+    padding-left: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 4%;
+}
+
+.miss-photo-preview-lens img {
+    height: 130%;
+
+    margin-right: 10px;
+}
+
+.modal-backdrop {
+    z-index: initial;
+}
+
 .mpanel {
     border: 1px solid #ddd;
     margin-bottom: 10px;
@@ -324,7 +351,19 @@
     text-decoration: none;
 }
 
-/*polariods gallery*/
+.total-likes {
+    height: 75px;
+
+    background-image: url(../images/bubble_vote_gray.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    padding: 10px 20px 40px 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/*<!-- polariods gallery -->*/
 .polaroids .img-cover {
     height: 100vw;
 }
@@ -353,13 +392,21 @@
     z-index: 1;
 }
 
-@media screen and (min-width: 992px) and (max-width: 1200px) {
+@media screen and (min-width: 992px) {
     .nav-tools {
         width: 300px;
     }
 
-    .polaroids .img-cover {
+    .miss-gallery .polaroids .img-cover {
         height: 16vw;
+    }
+
+    .miss-modal-gallery .polaroids .img-cover {
+        height: 6vw;
+    }
+
+    .miss-photo-preview {
+        height: 75vh;
     }
 
     .thumb-1 {
@@ -372,8 +419,16 @@
         width: 300px;
     }
 
-    .polaroids .img-cover {
+    .miss-gallery .polaroids .img-cover {
         height: 16vw;
+    }
+
+    .miss-modal-gallery .polaroids .img-cover {
+        height: 6vw;
+    }
+
+    .miss-photo-preview {
+        height: 75vh;
     }
 
     .thumb-1 {

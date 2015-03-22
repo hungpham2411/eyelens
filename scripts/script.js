@@ -15,6 +15,28 @@ function bankInfo() {
     });
 }
 
+function loadMissData() {
+    $(".miss-item").on("show.bs.modal", function (event) {
+        var button = $(event.relatedTarget);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                $("#miss-modal-label").text(response.missName);
+                $("#miss-address").text(response.missAddress);
+                $("#miss-birth-date").text(response.missBirthDate);
+                $("#miss-num-likes").text(response.missNumLikes);
+                $("#miss-comment-shared").text(response.missCommentShared);
+
+                $("#miss-model").empty();
+
+            }
+        };
+
+        CloudZoom.quickStart();
+    });
+}
+
 function addEventListeners() {
     document.addEventListener("DOMContentLoaded", function () {
         try {
@@ -49,6 +71,8 @@ function addEventListeners() {
 
         //Initialize popover
         $("[data-toggle=popover]").popover();
+
+        CloudZoom.quickStart();
 
         bankInfo();
     });

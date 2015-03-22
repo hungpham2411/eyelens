@@ -237,7 +237,7 @@ ul {
     padding: 5px;
 }
 
-@media screen and (min-width: 992px) and (max-width: 1200px) {
+@media screen and (min-width: 992px) {
     .row-same-height {
         display: flex;
     }
@@ -249,7 +249,7 @@ ul {
     }
 }
 
-/*block grid*/
+/*<!-- block grid -->*/
 [class*="block-grid-"] {
     display: block;
     padding: 0;
@@ -364,7 +364,7 @@ ul {
         clear: none; }
     .small-block-grid-12 > li:nth-of-type(12n+1) {
         clear: both; } }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 768px) {
     [class*="medium-block-grid-"] > li {
         float: left;
     }
@@ -464,7 +464,7 @@ ul {
         clear: none; }
     .medium-block-grid-12 > li:nth-of-type(12n+1) {
         clear: both; } }
-@media only screen and (min-width: 64.063em) {
+@media only screen and (min-width: 992px) {
     [class*="large-block-grid-"] > li {
         float: left;
     }

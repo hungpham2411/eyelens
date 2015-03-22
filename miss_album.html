@@ -254,49 +254,129 @@
                         </div>
 
                         <div class="bg2 pda2">
-                            <header>
+                            <div>
                                 <h3 class="text-bold">Album ảnh của các thí sinh sơ tuyển</h3>
-                            </header>
+                            </div>
 
                             <p>Đây là danh sách album của các thí sinh dự thi đã upload ít nhất 5 ảnh chân dung với 5 màu lens khác nhau của Mắt Nai.</p>
 
-                            <ul class="polaroids large-block-grid-5">
-                                <li>
-                                    <figure class="thumbnail">
-                                        <a title="Trần thanh tâm" href="#"><img class="img-cover" src="images/album/tran_thanh_tam_001.jpeg" alt=""/></a>
-                                        <figcaption class="caption text-center">
-                                            <h4 class="text-highlight">Trần thanh tâm</h4>
-                                        </figcaption>
-                                    </figure>
-                                </li>
+                            <div class="miss-gallery">
+                                <ul class="polaroids large-block-grid-5">
+                                    <li>
+                                        <figure class="thumbnail">
+                                            <a id="1" class="miss-item" data-target="#miss-modal" data-toggle="modal" title="Trần thanh tâm" href="#"><img class="img-cover" src="images/album/tran_thanh_tam_001.jpeg" alt=""/></a>
+                                            <figcaption class="caption text-center">
+                                                <h4 class="text-bold text-highlight">Trần thanh tâm</h4>
+                                            </figcaption>
+                                        </figure>
+                                    </li>
 
-                                <li>
-                                    <figure class="thumbnail">
-                                        <a title="Trần thanh tâm" href="#"><img class="img-cover" src="images/album/tran_thanh_tam_001.jpeg" alt=""/></a>
-                                        <figcaption class="caption text-center">
-                                            <h4 class="text-highlight">Trần thanh tâm</h4>
-                                        </figcaption>
-                                    </figure>
-                                </li>
+                                    <li>
+                                        <figure class="thumbnail">
+                                            <a id="2" class="miss-item" data-target="#miss-modal" data-toggle="modal" title="Nguyễn khánh linh" href="#"><img class="img-cover" src="images/album/nguyen_khanh_linh_001.jpeg" alt=""/></a>
+                                            <figcaption class="caption text-center">
+                                                <h4 class="text-bold text-highlight">Nguyễn khánh linh</h4>
+                                            </figcaption>
+                                        </figure>
+                                    </li>
 
-                                <li>
-                                    <figure class="thumbnail">
-                                        <a title="Trần thanh tâm" href="#"><img class="img-cover" src="images/album/tran_thanh_tam_001.jpeg" alt=""/></a>
-                                        <figcaption class="caption text-center">
-                                            <h4 class="text-highlight">Trần thanh tâm</h4>
-                                        </figcaption>
-                                    </figure>
-                                </li>
+                                    <li>
+                                        <figure class="thumbnail">
+                                            <a id="3" class="miss-item" data-target="#miss-modal" data-toggle="modal" title="Tiểu băng" href="#"><img class="img-cover" src="images/album/tieu_bang_001.jpeg" alt=""/></a>
+                                            <figcaption class="caption text-center">
+                                                <h4 class="text-bold text-highlight">Tiểu băng</h4>
+                                            </figcaption>
+                                        </figure>
+                                    </li>
 
-                                <li>
-                                    <figure class="thumbnail">
-                                        <a title="Trần thanh tâm" href="#"><img class="img-cover" src="images/album/tran_thanh_tam_001.jpeg" alt=""/></a>
-                                        <figcaption class="caption text-center">
-                                            <h4 class="text-highlight">Trần thanh tâm</h4>
-                                        </figcaption>
-                                    </figure>
-                                </li>
-                            </ul>
+                                    <li>
+                                        <figure class="thumbnail">
+                                            <a id="4" class="miss-item" data-target="#miss-modal" data-toggle="modal" title="Nguyễn thu trang" href="#"><img class="img-cover" src="images/album/nguyen_thu_trang_001.jpeg" alt=""/></a>
+                                            <figcaption class="caption text-center">
+                                                <h4 class="text-bold text-highlight">Nguyễn thu trang</h4>
+                                            </figcaption>
+                                        </figure>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="miss-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="miss-modal-label">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 id="miss-modal-label" class="modal-title">
+                                        Trần thanh tâm
+                                    </h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="flex-rwfssb">
+                                                    <div>
+                                                        <p>(<span id="miss-address">Hà Nội</span>)</p>
+                                                        <p>Ngày Sinh: <span id="miss-birth-date">28/10/1994</span></p>
+                                                    </div>
+
+                                                    <div class="text-center total-likes">
+                                                        <p><span id="miss-num-likes">0</span></p>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <h4 class="text-highlight">Chia sẻ</h4>
+                                                    <p id="miss-comment-shared">mình đã dùng lens Mắt Nai được hơn 2 năm rồi ạ, lens đeo êm và mượt lắm ạ, Hãy vote cho mình nhá</p>
+                                                </div>
+
+                                                <div class="miss-modal-gallery">
+                                                    <ul id="miss-model" class="polaroids large-block-grid-4">
+                                                        <li>
+                                                            <figure class="thumbnail">
+                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_001.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_001.jpeg" alt=""/>
+                                                            </figure>
+                                                        </li>
+
+                                                        <li>
+                                                            <figure class="thumbnail">
+                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_002.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_002.jpeg" alt=""/>
+                                                            </figure>
+                                                        </li>
+
+                                                        <li>
+                                                            <figure class="thumbnail">
+                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_001.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_001.jpeg" alt=""/>
+                                                            </figure>
+                                                        </li>
+
+                                                        <li>
+                                                            <figure class="thumbnail">
+                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_001.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_001.jpeg" alt=""/>
+                                                            </figure>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="miss-photo-preview">
+                                                    <img class="cloudzoom img-cover" data-cloudzoom="zoomSizeMode: 'image', zoomPosition: 'inside', zoomOffsetX: 0" src="images/album/tran_thanh_tam_001.jpeg" alt=""/>
+                                                    <div class="flex-rwcfs miss-photo-preview-lens">
+                                                        <img src="images/100x100.png" alt=""/>
+                                                        <div class="text-bold">
+                                                            <span id="lens-group">Lily NPW-A4x</span><br/>
+                                                            <span id="lens-name" class="text-highlight">Lily Gray [NPW-A41]</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
