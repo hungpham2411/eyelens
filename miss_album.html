@@ -264,7 +264,7 @@
                                 <ul class="polaroids large-block-grid-5">
                                     <li>
                                         <figure class="thumbnail">
-                                            <a id="1" class="miss-item" data-target="#miss-modal" data-toggle="modal" title="Trần thanh tâm" href="#"><img class="img-cover" src="images/album/tran_thanh_tam_001.jpeg" alt=""/></a>
+                                            <a class="miss-item" data-id="1" data-target="#miss-modal" data-toggle="modal" title="Trần thanh tâm" href="#"><img class="img-cover" src="images/album/tran_thanh_tam_001.jpeg" alt=""/></a>
                                             <figcaption class="caption text-center">
                                                 <h4 class="text-bold text-highlight">Trần thanh tâm</h4>
                                             </figcaption>
@@ -273,7 +273,7 @@
 
                                     <li>
                                         <figure class="thumbnail">
-                                            <a id="2" class="miss-item" data-target="#miss-modal" data-toggle="modal" title="Nguyễn khánh linh" href="#"><img class="img-cover" src="images/album/nguyen_khanh_linh_001.jpeg" alt=""/></a>
+                                            <a class="miss-item" data-id="2" data-target="#miss-modal" data-toggle="modal" title="Nguyễn khánh linh" href="#"><img class="img-cover" src="images/album/nguyen_khanh_linh_001.jpeg" alt=""/></a>
                                             <figcaption class="caption text-center">
                                                 <h4 class="text-bold text-highlight">Nguyễn khánh linh</h4>
                                             </figcaption>
@@ -282,7 +282,7 @@
 
                                     <li>
                                         <figure class="thumbnail">
-                                            <a id="3" class="miss-item" data-target="#miss-modal" data-toggle="modal" title="Tiểu băng" href="#"><img class="img-cover" src="images/album/tieu_bang_001.jpeg" alt=""/></a>
+                                            <a class="miss-item" data-id="3" data-target="#miss-modal" data-toggle="modal" title="Tiểu băng" href="#"><img class="img-cover" src="images/album/tieu_bang_001.jpeg" alt=""/></a>
                                             <figcaption class="caption text-center">
                                                 <h4 class="text-bold text-highlight">Tiểu băng</h4>
                                             </figcaption>
@@ -291,7 +291,7 @@
 
                                     <li>
                                         <figure class="thumbnail">
-                                            <a id="4" class="miss-item" data-target="#miss-modal" data-toggle="modal" title="Nguyễn thu trang" href="#"><img class="img-cover" src="images/album/nguyen_thu_trang_001.jpeg" alt=""/></a>
+                                            <a class="miss-item" data-id="4" data-target="#miss-modal" data-toggle="modal" title="Nguyễn thu trang" href="#"><img class="img-cover" src="images/album/nguyen_thu_trang_001.jpeg" alt=""/></a>
                                             <figcaption class="caption text-center">
                                                 <h4 class="text-bold text-highlight">Nguyễn thu trang</h4>
                                             </figcaption>
@@ -336,25 +336,25 @@
                                                     <ul id="miss-model" class="polaroids large-block-grid-4">
                                                         <li>
                                                             <figure class="thumbnail">
-                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_001.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_001.jpeg" alt=""/>
+                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_001.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_001.jpeg" data-id="1" alt=""/>
                                                             </figure>
                                                         </li>
 
                                                         <li>
                                                             <figure class="thumbnail">
-                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_002.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_002.jpeg" alt=""/>
+                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_002.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_002.jpeg" data-id="2" alt=""/>
                                                             </figure>
                                                         </li>
 
                                                         <li>
                                                             <figure class="thumbnail">
-                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_001.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_001.jpeg" alt=""/>
+                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_001.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_001.jpeg" data-id="3" alt=""/>
                                                             </figure>
                                                         </li>
 
                                                         <li>
                                                             <figure class="thumbnail">
-                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_001.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_001.jpeg" alt=""/>
+                                                                <img class="cloudzoom-gallery img-cover" data-cloudzoom="image: 'images/album/tran_thanh_tam_001.jpeg', useZoom: '.cloudzoom'" src="images/album/tran_thanh_tam_001.jpeg" data-id="4" alt=""/>
                                                             </figure>
                                                         </li>
                                                     </ul>
@@ -363,12 +363,12 @@
 
                                             <div class="col-md-6">
                                                 <div class="miss-photo-preview">
-                                                    <img class="cloudzoom img-cover" data-cloudzoom="zoomSizeMode: 'image', zoomPosition: 'inside', zoomOffsetX: 0" src="images/album/tran_thanh_tam_001.jpeg" alt=""/>
+                                                    <img class="cloudzoom img-cover" data-cloudzoom="zoomSizeMode: 'image', zoomPosition: 'inside', zoomOffsetX: 0" src="" alt=""/>
                                                     <div class="flex-rwcfs miss-photo-preview-lens">
-                                                        <img src="images/100x100.png" alt=""/>
+                                                        <img id="lens-image" src="" alt=""/>
                                                         <div class="text-bold">
-                                                            <span id="lens-group">Lily NPW-A4x</span><br/>
-                                                            <span id="lens-name" class="text-highlight">Lily Gray [NPW-A41]</span>
+                                                            <span id="lens-group"></span><br/>
+                                                            <span id="lens-name" class="text-highlight"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -401,23 +401,6 @@
                                     Email: contact@matnai.vn<br/>
                                     Mã số ĐKKD: 0105403302
                                 </address>
-                            </div>
-
-                            <div class="col-md-4 col-md-offset-1">
-                                <form>
-                                    <fieldset>
-                                        <legend>THÔNG TIN TÀI KHOẢN</legend>
-                                        <select id="bank-list" class="form-control">
-                                            <option value="bank1">Bank 1</option>
-                                            <option value="bank2">Bank 2</option>
-                                            <option value="bank3">Bank 3</option>
-                                        </select>
-                                        <br/>
-                                        <p class="text-bold">Tên TK: <span id="bank-account-name">CTCP Đầu tư và TM Phát Đạt Hà Nội</span></p>
-                                        Số TK: <span id="bank-account-number">0011.0040.18880</span><br/>
-                                        Chi nhánh: <span id="bank-department">Sở Giao Dịch</span>
-                                    </fieldset>
-                                </form>
                             </div>
                         </div>
                     </div>

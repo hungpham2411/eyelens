@@ -1,22 +1,5 @@
-function bankInfo() {
-    var bank = document.querySelector("#bank-list");
-    bank.addEventListener("change", function () {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                var response = JSON.parse(xhr.responseText);
-                document.querySelector("#bank-account-name").innerHTML = response.accountName;
-                document.querySelector("#bank-account-number").innerHTML = response.accountNumber;
-                document.querySelector("#bank-department").innerHTML = response.department;
-            }
-        };
-        xhr.open("get", "php/bank_info.php?id=" + bank.value, true);
-        xhr.send();
-    });
-}
-
 function loadMissData() {
-    $(".miss-item").on("show.bs.modal", function (event) {
+    $("#miss-modal").on("show.bs.modal", function (event) {
         var button = $(event.relatedTarget);
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
@@ -29,11 +12,32 @@ function loadMissData() {
                 $("#miss-comment-shared").text(response.missCommentShared);
 
                 $("#miss-model").empty();
+                for (var i = 0; i < response.missModel.length; i++) {
+                    $("#miss-model").append("<li><figure class=\"thumbnail\"><img class=\"cloudzoom-gallery img-cover\" data-cloudzoom=\"image: 'images/album/" + response.missModel[i] + "', useZoom: '.cloudzoom'\" src=\"images/album/" + response.missModel[i] + "\" alt=\"\"/></figure></li>");
+                }
 
+                CloudZoom.quickStart();
+                getMissLensInfo();
             }
         };
+        xhr.open("get", "php/get_miss_data.php?id=" + button.data("id"), true);
+        xhr.send();
+    });
+}
 
-        CloudZoom.quickStart();
+function getMissLensInfo() {
+    $("#miss-model .cloudzoom-gallery").on("click", function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                $("#lens-image").attr("src", response.lensImage);
+                $("#lens-group").text(response.lensGroup);
+                $("#lens-name").text(response.lensName);
+            }
+        };
+        xhr.open("get", "php/get_miss_lens_info.php?id=" + $(this).data("id"), true);
+        xhr.send();
     });
 }
 
@@ -72,9 +76,11 @@ function addEventListeners() {
         //Initialize popover
         $("[data-toggle=popover]").popover();
 
-        CloudZoom.quickStart();
-
-        bankInfo();
+        try {
+            loadMissData();
+        } catch (e) {
+            console.log(e);
+        }
     });
 }
 
