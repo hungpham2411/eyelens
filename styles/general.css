@@ -135,6 +135,16 @@ ul {
     padding: 5px;
 }
 
+.icon-x1 {
+    width: 12px;
+    height: 12px;
+}
+
+.icon-x2 {
+    width: 24px;
+    height: 24px;
+}
+
 .icon-x3 {
     width: 36px;
     height: 36px;
