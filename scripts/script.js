@@ -13,7 +13,7 @@ function loadMissData() {
 
                 $("#miss-model").empty();
                 for (var i = 0; i < response.missModel.length; i++) {
-                    $("#miss-model").append("<li><figure class=\"thumbnail\"><img class=\"cloudzoom-gallery img-cover\" data-cloudzoom=\"image: 'images/album/" + response.missModel[i] + "', useZoom: '.cloudzoom'\" src=\"images/album/" + response.missModel[i] + "\" alt=\"\"/></figure></li>");
+                    $("#miss-model").append("<li><figure class=\"thumbnail\"><img class=\"cloudzoom-gallery img-cover\" data-cloudzoom=\"image: 'images/album/" + response.missModel[i].image + "', useZoom: '.cloudzoom'\" data-id=\"" + response.missModel[i].id + "\" src=\"images/album/" + response.missModel[i].image + "\" alt=\"\"/></figure></li>");
                 }
 
                 CloudZoom.quickStart();
