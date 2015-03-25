@@ -38,6 +38,10 @@ function getMissLensInfo() {
         };
         xhr.open("get", "php/get_miss_lens_info.php?id=" + $(this).data("id"), true);
         xhr.send();
+
+        $("#miss-modal").animate({
+            scrollTop: $(".miss-photo-preview").offset().top
+        }, 1000);
     });
 }
 
