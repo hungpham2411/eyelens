@@ -1,3 +1,19 @@
+function getBankInfo() {
+    document.querySelector("#bank-name").addEventListener("change", function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                document.querySelector("#bank-account-name").innerHTML = response.bankAccountName;
+                document.querySelector("#bank-account-number").innerHTML = response.bankAccountNumber;
+                document.querySelector("#bank-department").innerHTML = response.bankDepartment;
+            }
+        };
+        xhr.open("get", "php/get_bank_info.php?id=" + this.value, true);
+        xhr.send();
+    });
+}
+
 function loadMissData() {
     $("#miss-modal").on("show.bs.modal", function (event) {
         var button = $(event.relatedTarget);
@@ -82,6 +98,12 @@ function addEventListeners() {
 
         try {
             loadMissData();
+        } catch (e) {
+            console.log(e);
+        }
+
+        try {
+            getBankInfo();
         } catch (e) {
             console.log(e);
         }
