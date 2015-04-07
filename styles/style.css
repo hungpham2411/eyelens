@@ -78,6 +78,10 @@
     position: relative;
 }
 
+.intro-side {
+    transition: margin-top 0.5s;
+}
+
 a.list-group-item-success {
     color: purple;
     background-color: rgba(128, 0, 128, 0.1);
@@ -156,8 +160,8 @@ a.list-group-item-success:focus, a.list-group-item-success:hover {
 }
 
 .mini-detail .media-object {
-    width: 128px;
-    height: 128px;
+    width: 64px;
+    height: 64px;
 }
 
 .miss-photo-preview {

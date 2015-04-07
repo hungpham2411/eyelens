@@ -61,6 +61,25 @@ function getMissLensInfo() {
     });
 }
 
+function introSideScroll() {
+    var introSide = document.querySelector(".intro-side");
+    var introSideTopCoord = introSide.getBoundingClientRect().top;
+    var main = document.querySelector(".main");
+    var newTop = 0;
+    var maxScroll = main.clientHeight - introSide.clientHeight;
+
+    var mql = window.matchMedia("screen and (min-width: 768px)");
+    if (mql.matches) {
+        window.addEventListener("scroll", function () {
+            if (this.scrollY > introSideTopCoord) {
+                var st = this.scrollY > maxScroll ? maxScroll : this.scrollY;
+                newTop = st - introSideTopCoord;
+                introSide.style.marginTop = newTop + "px";
+            }
+        });
+    }
+}
+
 function addEventListeners() {
     document.addEventListener("DOMContentLoaded", function () {
         try {
@@ -68,6 +87,8 @@ function addEventListeners() {
         } catch (e) {
             console.log(e);
         }
+
+        introSideScroll();
 
         try {
             $("#model-owlslider").owlCarousel({
@@ -102,11 +123,11 @@ function addEventListeners() {
             console.log(e);
         }
 
-        try {
-            getBankInfo();
-        } catch (e) {
-            console.log(e);
-        }
+//        try {
+//            getBankInfo();
+//        } catch (e) {
+//            console.log(e);
+//        }
     });
 }
 
