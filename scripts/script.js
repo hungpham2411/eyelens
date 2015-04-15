@@ -1,3 +1,30 @@
+function checkEyeDegree(eyeSelector) {
+    var eyeDegreeBox = document.querySelector(eyeSelector);
+    var repository = eyeDegreeBox.parentElement.querySelector(".repository");
+    var repositoryList = function (list) {
+        var items = "";
+        for (var i in list) {
+            if (list.hasOwnProperty(i)) {
+                items = items + "<li>" + list[i] + "</li>";
+            }
+        }
+        return items;
+    };
+    eyeDegreeBox.addEventListener("change", function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                repository.dataset.content = "<ul>"
+                        + repositoryList(response) +
+                        "</ul>";
+            }
+        };
+        xhr.open("get", "php/check_eye_degree.php?id=" + eyeDegreeBox.value, true);
+        xhr.send();
+    });
+}
+
 function getBankInfo() {
     document.querySelector("#bank-name").addEventListener("change", function () {
         var xhr = new XMLHttpRequest();
@@ -26,7 +53,6 @@ function loadMissData() {
                 $("#miss-birth-date").text(response.missBirthDate);
                 $("#miss-num-likes").text(response.missNumLikes);
                 $("#miss-comment-shared").text(response.missCommentShared);
-
                 $("#miss-model").empty();
                 for (var i = 0; i < response.missModel.length; i++) {
                     $("#miss-model").append("<li><figure class=\"thumbnail\"><img class=\"cloudzoom-gallery img-cover\" data-cloudzoom=\"image: 'images/album/" + response.missModel[i].image + "', useZoom: '.cloudzoom'\" data-id=\"" + response.missModel[i].id + "\" src=\"images/album/" + response.missModel[i].image + "\" alt=\"\"/></figure></li>");
@@ -54,7 +80,6 @@ function getMissLensInfo() {
         };
         xhr.open("get", "php/get_miss_lens_info.php?id=" + $(this).data("id"), true);
         xhr.send();
-
         $("#miss-modal").animate({
             scrollTop: $(".miss-photo-preview").offset().top
         }, 1000);
@@ -67,7 +92,6 @@ function introSideScroll() {
     var main = document.querySelector(".main");
     var newTop = 0;
     var maxScroll = main.clientHeight - introSide.clientHeight;
-
     var mql = window.matchMedia("screen and (min-width: 768px)");
     if (mql.matches) {
         window.addEventListener("scroll", function () {
@@ -88,7 +112,11 @@ function addEventListeners() {
             console.log(e);
         }
 
-        introSideScroll();
+        try {
+            introSideScroll();
+        } catch (e) {
+            console.log(e);
+        }
 
         try {
             $("#model-owlslider").owlCarousel({
@@ -114,20 +142,26 @@ function addEventListeners() {
             console.log(e);
         }
 
-        //Initialize popover
+//Initialize popover
         $("[data-toggle=popover]").popover();
-
         try {
             loadMissData();
         } catch (e) {
             console.log(e);
         }
 
-//        try {
-//            getBankInfo();
-//        } catch (e) {
-//            console.log(e);
-//        }
+        try {
+            checkEyeDegree("#leftEyeDegree");
+            checkEyeDegree("#rightEyeDegree");
+        } catch (e) {
+            console.log(e);
+        }
+
+        try {
+            getBankInfo();
+        } catch (e) {
+            console.log(e);
+        }
     });
 }
 
